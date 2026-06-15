@@ -54,3 +54,25 @@ python slack_agent.py
 
 El bot responderá a mensajes directos (DM) y a menciones (`@bot`) en canales,
 manteniendo el historial de conversación por canal/usuario.
+
+### Integración con HubSpot (captura de leads)
+
+El agente puede registrar automáticamente los leads en HubSpot cuando el
+cliente comparte su correo y muestra interés real en un producto.
+
+1. En HubSpot ve a **Configuración → Integraciones → Private Apps** y crea
+   una app con el scope `crm.objects.contacts.write`.
+2. Copia el token generado (empieza con `pat-`).
+3. Define la variable de entorno:
+
+```bash
+export HUBSPOT_ACCESS_TOKEN="pat-..."
+```
+
+Con esta variable configurada (tanto en `sales_agent.py` como en
+`slack_agent.py`), el agente usa la herramienta `register_lead` para crear o
+actualizar el contacto en HubSpot con su email, nombre, teléfono, empresa y
+una nota con el resumen de su interés, sin intervención manual.
+
+Si `HUBSPOT_ACCESS_TOKEN` no está definido, el agente sigue funcionando
+normalmente, solo que no registrará los leads en HubSpot.

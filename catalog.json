@@ -1,0 +1,26 @@
+[
+  {
+    "id": "plan-basico",
+    "nombre": "Plan Básico",
+    "descripcion": "Acceso a las funciones esenciales para equipos pequeños.",
+    "precio_usd": 19,
+    "periodo": "mensual",
+    "caracteristicas": ["1 usuario", "Soporte por correo", "5 GB de almacenamiento"]
+  },
+  {
+    "id": "plan-pro",
+    "nombre": "Plan Pro",
+    "descripcion": "Ideal para equipos en crecimiento que necesitan colaboración avanzada.",
+    "precio_usd": 49,
+    "periodo": "mensual",
+    "caracteristicas": ["Hasta 10 usuarios", "Soporte prioritario", "100 GB de almacenamiento", "Integraciones avanzadas"]
+  },
+  {
+    "id": "plan-empresarial",
+    "nombre": "Plan Empresarial",
+    "descripcion": "Solución completa para organizaciones grandes con necesidades personalizadas.",
+    "precio_usd": 199,
+    "periodo": "mensual",
+    "caracteristicas": ["Usuarios ilimitados", "Soporte 24/7", "Almacenamiento ilimitado", "Gerente de cuenta dedicado", "SLA personalizado"]
+  }
+]

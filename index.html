@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tablero de Seguimiento de Proyectos</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Gestión de portafolio</p>
+        <h1>Tablero de seguimiento de proyectos</h1>
+        <p class="hero__copy">
+          Registra tus proyectos, compara avance planificado contra avance real y controla el desempeño de costos en un solo lugar.
+        </p>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <section class="panel form-panel" aria-labelledby="form-title">
+        <div class="section-heading">
+          <p class="eyebrow">Nuevo registro</p>
+          <h2 id="form-title">Agregar o actualizar proyecto</h2>
+        </div>
+
+        <form id="project-form" class="project-form">
+          <label>
+            Nombre del proyecto
+            <input id="name" name="name" type="text" placeholder="Ej. Implementación CRM" required />
+          </label>
+
+          <label>
+            Responsable
+            <input id="owner" name="owner" type="text" placeholder="Ej. Ana Pérez" required />
+          </label>
+
+          <div class="form-grid">
+            <label>
+              Avance planificado (%)
+              <input id="plannedProgress" name="plannedProgress" type="number" min="0" max="100" value="50" required />
+            </label>
+            <label>
+              Avance real (%)
+              <input id="actualProgress" name="actualProgress" type="number" min="0" max="100" value="40" required />
+            </label>
+          </div>
+
+          <div class="form-grid">
+            <label>
+              Costo planificado
+              <input id="plannedCost" name="plannedCost" type="number" min="0" step="100" value="10000" required />
+            </label>
+            <label>
+              Costo real
+              <input id="actualCost" name="actualCost" type="number" min="0" step="100" value="8500" required />
+            </label>
+          </div>
+
+          <label>
+            Estado
+            <select id="status" name="status">
+              <option value="En curso">En curso</option>
+              <option value="En riesgo">En riesgo</option>
+              <option value="Atrasado">Atrasado</option>
+              <option value="Completado">Completado</option>
+            </select>
+          </label>
+
+          <button type="submit">Guardar proyecto</button>
+        </form>
+      </section>
+
+      <section class="summary-grid" aria-label="Indicadores generales">
+        <article class="metric-card">
+          <span>Proyectos</span>
+          <strong id="totalProjects">0</strong>
+        </article>
+        <article class="metric-card">
+          <span>Avance planificado</span>
+          <strong id="avgPlanned">0%</strong>
+        </article>
+        <article class="metric-card">
+          <span>Avance real</span>
+          <strong id="avgActual">0%</strong>
+        </article>
+        <article class="metric-card">
+          <span>Ejecución presupuestal</span>
+          <strong id="budgetExecution">0%</strong>
+        </article>
+      </section>
+
+      <section class="panel table-panel" aria-labelledby="table-title">
+        <div class="section-heading table-heading">
+          <div>
+            <p class="eyebrow">Portafolio</p>
+            <h2 id="table-title">Proyectos activos</h2>
+          </div>
+          <button id="reset-demo" class="secondary-button" type="button">Restaurar demo</button>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Proyecto</th>
+                <th>Responsable</th>
+                <th>Planificado</th>
+                <th>Real</th>
+                <th>% ejecución</th>
+                <th>Costo planificado</th>
+                <th>Costo real</th>
+                <th>Estado</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody id="project-table"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

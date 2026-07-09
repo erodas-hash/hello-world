@@ -76,3 +76,31 @@ una nota con el resumen de su interés, sin intervención manual.
 
 Si `HUBSPOT_ACCESS_TOKEN` no está definido, el agente sigue funcionando
 normalmente, solo que no registrará los leads en HubSpot.
+
+## Agente de IA de Marketing — Modelo AIDA
+
+Genera piezas de contenido de marketing estructuradas en las 4 etapas del
+modelo AIDA: **Atención → Interés → Deseo → Acción**.
+
+### Uso
+
+```bash
+export ANTHROPIC_API_KEY="tu-api-key"
+python marketing_agent.py
+```
+
+El agente te pedirá:
+- Producto o servicio
+- Público objetivo
+- Principal beneficio / propuesta de valor
+- CTA deseado (ej: "Agenda una demo", "Compra ahora")
+- Tono de comunicación (profesional, casual, urgente, etc.)
+- Tipo de contenido:
+  1. Email de ventas
+  2. Post para LinkedIn
+  3. Post para Instagram/Facebook
+  4. Anuncio de Google Ads
+  5. Mensaje de WhatsApp
+  6. Guion de video corto (30-60 seg)
+
+Y generará el contenido listo para usar, con una variación o consejo al final.
